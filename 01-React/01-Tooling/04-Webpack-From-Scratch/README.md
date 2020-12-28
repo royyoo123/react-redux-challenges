@@ -44,10 +44,10 @@ To tweak the ESlint rules to your own taste, you can open the `.eslintrc.json`. 
 }
 ```
 
-Once your done, check if eslint is still available. Just run which eslint:
+Once your done, check if eslint is still available. Just run `which eslint`:
 
-- if it returns `node_modules/.bin/`, everything is fine;
-- if it returns can't locate eslint (or something similar), just run `yarn install` and everyting should be fine.
+- if it returns `./node_modules/.bin/eslint`, everything is fine;
+- if it returns can't locate eslint (or something similar), just run `yarn install` and everything should be fine.
 
 Create a first `src/index.js` file and write a JS function which will `alert('Hello world')`. You can run the linter with:
 
@@ -75,7 +75,7 @@ See what we have here? A linter warning. By default, ESLint [recommends not to u
 Webpack will help us bundle every javascript file together to produce a neat bundled file. This is something Rails also does thanks to the [Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html).
 
 ```bash
-yarn add webpack webpack-cli webpack-dev-server --dev
+yarn add webpack webpack-cli@3.3.12 webpack-dev-server --dev
 ```
 
 Let's have a look at the `.bin` folder of our project:
@@ -125,7 +125,7 @@ module.exports = {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js"
   },
-  devtool: "sourcemap"
+  devtool: "source-map"
 };
 ```
 
